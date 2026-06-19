@@ -1,9 +1,14 @@
 from fastapi import FastAPI
 from database.database import engine, Base
+import database.models
 
-app = FastAPI()
+from api.simulation import router as simulation_router
 
 Base.metadata.create_all(bind=engine)
+
+app = FastAPI(title="Virtual Memory Explorer")
+
+app.include_router(simulation_router)
 
 @app.get("/")
 def root():
