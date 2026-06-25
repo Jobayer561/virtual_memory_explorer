@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router";
-import Simulator from "../../pages/Simulator";
-import History from "../../pages/History";
-import Analytics from "../../pages/Analytics";
+import Simulator from "../pages/Simulator";
+import History from "../pages/History";
+import Analytics from "../pages/Analytics";
 
 
 
