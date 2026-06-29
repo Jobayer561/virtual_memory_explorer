@@ -1,15 +1,17 @@
-def fifo(reference_string, frames_count):
+def lru(reference_string, frames_count):
     frames = []
     frame_history = []
 
     page_faults = 0
     hits = 0
-    pointer = 0
 
     for page in reference_string:
 
         if page in frames:
             hits += 1
+
+            frames.remove(page)
+            frames.append(page)
 
         else:
             page_faults += 1
@@ -18,8 +20,8 @@ def fifo(reference_string, frames_count):
                 frames.append(page)
 
             else:
-                frames[pointer] = page
-                pointer = (pointer + 1) % frames_count
+                frames.pop(0)
+                frames.append(page)
 
         frame_history.append(frames.copy())
 
