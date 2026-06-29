@@ -12,3 +12,5 @@ dist/
 build/
 
 *.db
+*.js
+*.jsx
