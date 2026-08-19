@@ -65,7 +65,7 @@ const SimulationForm = ({ onSubmit, loading }) => {
 
         <input
           type="text"
-          placeholder="1,2,3,1,4,5"
+          placeholder="Enter string"
           value={referenceString}
           onChange={(e) => setReferenceString(e.target.value)}
           className={fieldClass}
